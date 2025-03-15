@@ -6,7 +6,7 @@
 /*   By: bebuber <bebuber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 14:46:23 by bebuber           #+#    #+#             */
-/*   Updated: 2025/03/15 15:01:44 by bebuber          ###   ########.fr       */
+/*   Updated: 2025/03/15 17:12:00 by bebuber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,12 @@ class BitcoinEchange {
 		BitcoinEchange& operator=(const BitcoinEchange& other);
 		~BitcoinEchange() {};
 		
+		double getValueOnDate(const std::string& date) const;
 		void processInputFile(const std::string& inputFilename);
 	private:
 		void loadData(const std::string& filename);
+		bool isValidDate(const std::string& date);
+		bool isValidQuantity(const std::string& quantityStr, double quantity);
 		std::map<std::string, double> data;
 }
 
