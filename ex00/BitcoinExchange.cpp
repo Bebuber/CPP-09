@@ -6,7 +6,7 @@
 /*   By: bebuber <bebuber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 14:46:26 by bebuber           #+#    #+#             */
-/*   Updated: 2025/03/16 00:28:21 by bebuber          ###   ########.fr       */
+/*   Updated: 2025/03/16 00:34:22 by bebuber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ bool BitcoinExchange::isValidDate(const std::string& date) {
 	}
 
 	try {
-		// int year = std::stoi(date.substr(0, 4));
 		int month = std::stoi(date.substr(5, 2));
 		int day = std::stoi(date.substr(8, 2));
 		if (month < 1 || month > 12 || day < 1 || day > 31) {
@@ -71,9 +70,6 @@ bool BitcoinExchange::isValidDate(const std::string& date) {
 		return false;
 	}
 
-	// if (year < 2009 || (year == 2009 && month == 1 && day < 2)) {
-	// 	return false;
-	// }
 	return true;	
 }
 
@@ -104,7 +100,6 @@ void BitcoinExchange::processInputFile(const std::string& inputFilename) {
 		double quantity = 0;
 		
 		if (std::getline(ss, date, '|') && std::getline(ss, quantityStr)) {
-			// std::cerr << "date before: \"" << date << "\" value before: \"" << quantityStr << "\""<< std::endl;
 			date.erase(date.find_last_not_of(" \n\r\t") + 1);
 			quantityStr.erase(quantityStr.find_first_of(" \n\r\t"), quantityStr.find_first_not_of(" \n\r\t"));
 			
