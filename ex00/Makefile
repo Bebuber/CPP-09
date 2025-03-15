@@ -15,7 +15,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++17
 
 TARGET = btc
-`
+
 SRCS = $(wildcard *.cpp)
 
 OBJS = $(SRCS:.cpp=.o)
@@ -28,13 +28,12 @@ $(TARGET): $(OBJS)
 %.o: %.cpp	
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-clean:-*
+clean:
 	rm -f $(OBJS)
 
 fclean: clean 
 	rm -f $(TARGET)
 
-re: fclean all3
-..0
-721`	aq!zw"?}
+re: fclean all
+
 .PHONY: all fclean clean re
