@@ -6,7 +6,7 @@
 /*   By: bebuber <bebuber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 02:43:19 by bebuber           #+#    #+#             */
-/*   Updated: 2025/03/16 23:51:41 by bebuber          ###   ########.fr       */
+/*   Updated: 2025/03/17 01:11:00 by bebuber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ class PmergeMe {
 		std::vector<int> vec;
 		std::deque<int> deq;
 
+		std::vector<int> merge(std::vector<int> left, std::vector<int> right);
+		
+		std::vector<int> mergeInsertion(std::vector<int> container);
+		
 		bool isDuplicate(int num);
 		void readInput(int argc, char* input[]);
 };
